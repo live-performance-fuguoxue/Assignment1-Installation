@@ -1,0 +1,25 @@
+<jittershader name="Particles Shader">
+	<description></description>
+	<param name="position" type="vec3" state="POSITION" />
+	<param name="color" type="vec4" state="COLOR" />
+	<language name="glsl" version="1.5">
+		<bind param="position" program="vp" />
+		<bind param="color" program="vp" />
+		<program name="vp" type="vertex">
+<![CDATA[
+#version 330 core
+
+in vec3 position;
+in vec4 color;
+
+out vec3 oPosition;
+out vec4 oColor;
+
+void main() {	
+	oPosition = position;
+	oColor = color;
+}
+]]>
+		</program>
+	</language>
+</jittershader>
